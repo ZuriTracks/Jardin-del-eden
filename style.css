@@ -1,0 +1,202 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-image: url('./Imagenes/fondo\ jardin\ del\ eden.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    font-family: Arial, sans-serif;
+    transition: filter 0.3s ease;
+}
+
+/* Sección cuadro */
+.seccion-cuadro {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0; /* Eliminar el padding para ajustar las secciones */
+    margin: 20px 0; /* Mantener margen entre secciones */
+}
+
+/* Cuadro principal */
+.cuadro {
+    width: 100%; /* Hacer el cuadro del 100% de ancho */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    color: white;
+    border-radius: 10px;
+    border: 2px solid red;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    padding: 0; /* Eliminar el padding dentro del cuadro */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 50%;
+    margin-left: 20%;
+}
+
+/* Efecto hover en el cuadro */
+.cuadro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado del cuadro */
+.cuadro-header {
+    background-color: #252c3a; /* Fondo oscuro del encabezado */
+    padding: 15px 20px;
+    font-size: 1.2rem; /* Reducido tamaño del texto */
+    font-weight: bold;
+    color: white;
+    margin: 0; /* Eliminar márgenes */
+}
+
+/* Logo de la sección Comunidad */
+.cuadro-content img {
+    width: 100px; /* Tamaño ajustado del logo */
+    height: 100px; /* Mismo alto para mantener la proporción */
+    object-fit: contain; /* Mantiene la imagen dentro del contenedor sin distorsionarla */
+    font-size: 1.2rem;
+    color: white;
+    text-align: center; /* Asegura que el texto esté centrado */
+    margin: 0;
+}
+
+/* Contenido principal dentro del cuadro */
+.cuadro-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre la imagen y el título */
+}
+
+/* Título dentro del cuadro */
+.cuadro-content h4 {
+    font-size: 1.2rem; /* Tamaño ajustado del texto */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+    color: white; /* Color blanco para contraste */
+}
+
+/* Línea separadora entre secciones */
+hr.custom-divider {
+    border: none;
+    height: 2px;
+    background-color: red;
+    width: 100%;
+    margin: 3px 0;
+}
+
+/* Subtítulos y contenido adicional */
+.cuadro-subseccion {
+    font-size: 1.1rem;
+    padding: 3px 0; /* Reducir relleno */
+    margin-top: 5px;
+}
+
+.cuadro-subseccion h5 {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.cuadro-subseccion p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    margin-left: 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+
+/* Contenedor del modal */
+.modal-container {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: slideIn 0.4s ease;
+}
+
+/* Botón de cerrar el modal */
+.btn-close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Animación fadeIn para el modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animación slideIn para el modal */
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.logo-confesiones {
+    width: 30px;
+    height: 30px;
+}
+
+/* Contenedor general que divide en 2 columnas */
+.layout-dos-columnas {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* Columna izquierda para las secciones actuales */
+.columna-izquierda {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Columna derecha vacía por ahora, lista para expandir */
+.columna-derecha {
+    width: 50%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.reglas-centradas {
+    justify-content: center;
+    text-align: center;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./Imagenes/Fondo Jardin.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .registro-container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .registro-container h2 {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .btn-google {
+      background-color: #db4437;
+      color: white;
+      font-weight: bold;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn-google:hover {
+      background-color: #c13528;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    a.volver {
+      color: #ccc;
+      display: block;
+      margin-top: 20px;
+      text-decoration: underline;
+    }
+
+    a.volver:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="registro-container">
+    <h2>Registro rápido con Google</h2>
+    <form action="#" onsubmit="return verificarCaptcha()">
+      <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
+
+      <button class="btn-google" type="submit">Iniciar sesión con Google</button>
+    </form>
+    <a href="index.html" class="volver">← Volver al inicio</a>
+  </div>
+
+  <script>
+    function verificarCaptcha() {
+      const response = grecaptcha.getResponse();
+      if (response.length === 0) {
+        alert("Por favor, verifica que no eres un robot.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./Imagenes/fondo\ jardin\ del\ eden.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: filter 0.3s ease;
+        }
+
+        img {
+            width: 300px;
+            margin: 20px;
+        }
+
+        .btn-custom {
+            margin-left: 10px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-container {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            animation: slideIn 0.4s ease;
+        }
+
+        .btn-close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .seccion-cuadro {
+            margin: 20px;
+        }
+
+        .cuadro {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cuadro-header {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .blur {
+            filter: blur(5px);
+        }
+
+        /* Asegurar que todo el contenido esté centrado */
+        .cuadro-content {
+            text-align: center;
+        }
+
+        /* Asegurarse de que el contenedor de la lista sea centrado y en bloque */
+        .cuadro-content ul {
+            list-style-type: disc;  /* Puntos en la lista */
+            padding-left: 20px;
+            margin: 0 auto;
+            text-align: left;  /* Alineación de los elementos de la lista */
+            display: block; /* Esto asegura que los elementos estén en columna */
+            max-width: 800px; /* Limitar el ancho máximo para que la lista no sea demasiado ancha */
+        }
+
+        .cuadro-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Para que el contenido esté centrado en el contenedor */
+        .cuadro-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container-fluid d-flex align-items-center justify-content-between w-100">
+            <div class="d-flex align-items-center">
+                <!-- Imágenes sin enlace -->
+                <a href="./index.html">
+                    <img src="./Imagenes/logo jardin.png" alt="Logo" class="d-inline-block align-text-top me-2">
+                </a>
+                <img src="./Imagenes/logo jardin 2.0.png" alt="Segundo Logo" class="d-inline-block align-text-top me-2" style="width: 100px;">
+                <a class="navbar-brand mb-0" href="https://discord.gg/g8Gmyfqat7">Discord</a>
+                <a class="nav-link text-white" href="./Tienda.html">Tienda</a>
+            </div>
+
+            <!-- Botones de acceso -->
+            <div class="d-flex">
+                <a id="btnLogin" href="#" class="btn btn-outline-light btn-sm btn-custom">Iniciar Sesión</a>
+                <a href="./Registro.html" class="btn btn-light btn-sm btn-custom">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="seccion-cuadro">
+        <div class="cuadro">
+            <!-- Título centrado -->
+            <div class="cuadro-header">
+                <h1><strong>📜 Reglas de la Comunidad 📜</strong></h1>
+            </div>
+
+            <div class="cuadro-content reglas-centradas" style="padding: 20px;">
+                <p>
+                    <strong>1. ELIMINACIÓN DE DATOS PERSONALES Y CONTENIDO PROTEGIDO POR COPYRIGHT (DMCA)</strong><br>
+                    Si encuentras alguna publicación en El Jardín del Edén FORO que infrinja tus derechos de privacidad o de autor, puedes solicitar su eliminación. Esto incluye cualquier foto, video, texto u otro contenido que te pertenezca y que no hayas autorizado para ser compartido. Para hacerlo, solo necesitas ponerte en contacto con nosotros, explicando la situación y proporcionando las pruebas necesarias que demuestren que el contenido es tuyo o te afecta de alguna manera. Nos tomamos muy en serio estas solicitudes y actuamos con responsabilidad.<br><br>
+                
+                    <strong>2. PRIVACIDAD EN INTERNET</strong><br>
+                    Antes de publicar fotos, videos o cualquier contenido personal en internet, piénsalo dos veces. Una vez que algo es subido a redes sociales o plataformas online, el control sobre esa información se pierde. Incluso si configuras tu cuenta como "privada", lo cierto es que lo privado en internet es casi inexistente. Cada vez que alguien ve, descarga o comparte tu contenido, este se multiplica. Y cuando algo se viraliza, ya no hay marcha atrás.
+                
+                    Publicar algo en internet es como escribir con tinta permanente: siempre estará allí, y cualquier persona puede guardarlo o difundirlo, con o sin tu consentimiento. Por ello, si no deseas que algo de tu autoría se convierta en un contenido viral, lo mejor es no subirlo. Sé prudente con lo que compartes, y evitarás futuros inconvenientes.<br><br>
+                
+                    <strong>3. ¿CÓMO SOLICITAR LA ELIMINACIÓN DE CONTENIDO POR COPYRIGHT O PRIVACIDAD?</strong><br>
+                    Si necesitas solicitar la eliminación de contenido que infrinja tus derechos de autor o tu privacidad, sigue estos pasos:
+                    <ul>
+                        <li>Identifica los posts que vulneran tus derechos de autor o privacidad.</li>
+                        <li>Usa el botón de "Reportar" que aparece en cada publicación para enviarnos tu solicitud.</li>
+                        <li>Selecciona como motivo de reporte "Contenido con copyright" o "Privacidad / Acoso".</li>
+                    </ul>
+                    Un miembro del equipo revisará las publicaciones y tomará una decisión. Asegúrate de proporcionar las URLs correctas y una explicación detallada de por qué deseas que el contenido sea eliminado.
+                </p>
+                
+                <p>
+                    <strong>4. AVISO LEGAL</strong><br>
+                    El Jardín del Edén FORO se esfuerza por moderar y eliminar contenido que no cumpla con las reglas y la legislación vigente. No obstante, ni El Jardín del Edén ni su administrador asumen ninguna responsabilidad sobre lo publicado en el foro. La responsabilidad de los comentarios, imágenes y otros contenidos recae exclusivamente en los usuarios.
+                
+                    Las opiniones y publicaciones realizadas en El Jardín del Edén FORO no reflejan necesariamente las opiniones de la administración ni del equipo de moderadores.
+                
+                    Todas las marcas y derechos de autor presentes en esta página web son propiedad de sus respectivos autores.
+                </p>
+                
+                <p>
+                    <strong>5. Descargo de responsabilidad sobre el contenido:</strong><br>
+
+                    Las publicaciones, comentarios u opiniones expresadas dentro de El Jardín del Edén FORO pertenecen exclusivamente a sus autores y no representan necesariamente la postura, visión u opiniones de este sitio.
+                    
+                    El Jardín del Edén FORO no asegura ni garantiza la veracidad, precisión ni actualidad del contenido compartido. Si encuentras algún material que consideres inapropiado o problemático, te invitamos a contactarnos para poder revisarlo.
+                    
+                    Este foro funciona como un espacio social y libre de discusión, con el propósito de entretenimiento y exploración temática.
+                    
+                    En El Jardín del Edén FORO se tratan temas de diversa índole, incluyendo hechos reales. Algunas publicaciones pueden contener elementos exagerados, provocadores, ofensivos o ficticios con el único fin de promover el debate entre los usuarios.
+                </p>
+
+                <p>
+                    <strong>6. Aviso legal sobre enlaces externos:</strong><br>
+
+                    Es posible que el acceso a El Jardín del Edén FORO se realice a través de enlaces ubicados en otros sitios web. Aunque agradecemos que terceros enlacen nuestro foro, El Jardín del Edén FORO no asume ninguna responsabilidad por el contenido de páginas externas.
+
+                    No respaldamos, aprobamos ni garantizamos la veracidad o calidad del contenido presente en esos sitios. Tampoco tenemos control sobre su mantenimiento o actualizaciones, por lo que no nos responsabilizamos por la precisión, integridad o vigencia de la información que puedan contener.
+
+                </p>
+
+                <p>
+                    <strong>7. Descargo de responsabilidad sobre derechos de autor:</strong><br>
+
+                    El contenido publicado en El Jardín del Edén FORO no puede ser copiado, distribuido, exhibido públicamente, publicado o reutilizado en ninguna forma sin la autorización expresa y por escrito del titular de los derechos correspondientes. Cualquier uso no autorizado del material será considerado una infracción de los derechos de autor.
+
+                </p>
+
+                <p>
+                    <strong>8. Descargo de responsabilidad por comentarios</strong><br>
+
+                    Los comentarios publicados en El Jardín del Edén FORO son responsabilidad exclusiva de sus autores. Cada usuario asume toda responsabilidad legal por lo que escriba, incluyendo cualquier difamación, disputa o consecuencia derivada directamente de sus palabras.
+
+                    El Jardín del Edén FORO no garantiza la veracidad, exactitud, educación, integridad ni el tono de los comentarios realizados por los usuarios. Los comentarios se publican automáticamente y pueden mostrar el nombre de usuario junto con la fecha de publicación. Estos comentarios también pueden aparecer en otras partes del sitio según criterio editorial.
+
+                    Al enviar un comentario, imagen o video en este foro, el usuario acepta que El Jardín del Edén FORO tiene el derecho de editar o eliminar dicho contenido si así lo considera. Asimismo, el usuario reconoce que es el único responsable legal de lo que publique y se compromete a eximir al foro de cualquier reclamo legal o gasto que pueda surgir en relación con los contenidos enviados.
+
+                </p>
+
+                <p>
+                    <strong>9. 🛡️ Exención de responsabilidad y reglas del foro - El Jardín del Edén FORO</strong><br>
+
+                    <ul>
+
+                        <strong>Opiniones personales:</strong>
+                        <ul>
+                        <li>Las publicaciones representan solamente la opinión del usuario que las emite.</li>
+                        <li>No reflejan necesariamente la posición de El Jardín del Edén FORO.</li>
+                        </ul>
+
+
+                        <strong>Contenido publicado:</strong>
+                        <ul>
+                        <li>Asegúrate de que cualquier texto, imagen, video u otro material no infrinja derechos de autor, marcas, patentes o derechos personales.</li>
+                        <li>Solo publica contenido con autorización si no es de tu autoría.</li>
+                        </ul>
+
+
+
+                        <strong>Contenido prohibido:</strong>
+                        <ul>
+                        <li>Difamatorio, ofensivo o abusivo.</li>
+                        <li>Que promueva el odio o incite a la violencia.</li>
+                        <li>Con publicidad no autorizada (spam).</li>
+                        <li>Que invada la privacidad de terceros.</li>
+                        <li>Que promueva actividades ilegales o que infrinjan leyes locales o internacionales.</li>
+                        </ul>
+
+                        <strong>Finalidad del foro:</strong>
+                        <ul>
+                        <li>El foro debe utilizarse <strong>solo con fines legales y personales</strong>.</li>
+                        <li>No está permitido el uso comercial del contenido sin autorización.</li>
+                        </ul>
+
+                        <strong>Moderación:</strong>
+                        <ul>
+                        <li>Los moderadores pueden eliminar mensajes que se desvíen del tema.</li>
+                        <li>Quitar publicaciones que no aporten valor.</li>
+                        <li>Actuar sin previo aviso en caso de incumplimiento de las normas.</li>
+                        </ul>
+
+                        <strong>Consecuencias:</strong>
+                        <ul>
+                        <li>Quienes violen estas normas pueden perder su acceso al foro sin advertencia previa.</li>
+                        </ul>
+
+                    </ul>
+
+                </p>
+
+
+                <p>
+                    <strong>10. 🌐 Supervisión del foro - El Jardín del Edén FORO</strong><br>
+
+                    Usted comprende y acepta que El Jardín del Edén FORO no tiene la obligación de monitorear constantemente las publicaciones realizadas en el sitio. Sin embargo, El Jardín del Edén FORO se reserva en todo momento el derecho de editar, rechazar o eliminar cualquier contenido, ya sea parcial o completamente, que a su exclusivo criterio considere inapropiado o que infrinja los términos y condiciones del foro.
+
+                    Asimismo, El Jardín del Edén FORO podrá divulgar cualquier información necesaria para cumplir con solicitudes de entidades gubernamentales o legales, si así lo considera necesario.
+                </p>
+
+                <p>
+                    <strong>11. Limitaciones de responsabilidad:</strong><br>
+
+                    En ningún caso, incluyendo sin limitarse a situaciones de negligencia grave, El Jardín del Edén FORO será responsable por daños directos, indirectos, incidentales, especiales o consecuentes derivados del uso o la imposibilidad de uso del sitio, del foro o de cualquier contenido publicado en este.
+
+                    Al hacer uso de esta plataforma, usted reconoce y acepta expresamente que El Jardín del Edén FORO no se hace responsable por conductas difamatorias, ofensivas o ilegales cometidas por sus usuarios.
+                    
+                    Al registrarse para utilizar este sitio, usted declara haber leído y aceptado todas las normas, políticas y condiciones previamente expuestas.
+
+                    En caso de encontrar contenido que considere ofensivo, inapropiado o en violación de las reglas, le invitamos a reportarlo a la administración mediante el formulario disponible en cada publicacion del sitio.                    
+                </p>
+
+                <strong>12. 📄 DMCA y derechos de autor</strong><br>
+                <p>Todas las imágenes en <strong>El Jardín del Edén FORO</strong> están disponibles en varios lugares de Internet y se presume que son de dominio público. Se considera que su uso está dentro de los derechos establecidos por la Ley de Uso Justo de Derechos de Autor de Europa.</p>
+              
+                <p><strong>El Jardín del Edén FORO</strong> respeta la propiedad intelectual de terceros. Si usted considera que su trabajo ha sido utilizado de forma que constituya una infracción de derechos de autor, puede presentar una reclamación conforme al procedimiento detallado a continuación.</p>
+              
+                <h4>📬 Procedimiento para reclamaciones DMCA:</h4>
+                <p>Para que una reclamación por infracción de derechos de autor sea válida, debe enviarse por escrito a través del <strong>formulario de contacto</strong> disponible en nuestro sitio, incluyendo la siguiente información:</p>
+              
+                <ul>
+                  <li>Declaración de que usted es el titular del derecho exclusivo presuntamente infringido o que está autorizado para actuar en nombre del titular.</li>
+                  <li>Declaración, bajo pena de perjurio, de que la información proporcionada es veraz y precisa.</li>
+                  <li>Su firma (puede ser electrónica).</li>
+                  <li>Identificación clara de la(s) obra(s) protegida(s) por derechos de autor que han sido infringidas.</li>
+                  <li>Identificación del material que está siendo infringido e información suficiente para que podamos localizarlo.</li>
+                  <li>Datos de contacto válidos: dirección física, número telefónico y correo electrónico.</li>
+                  <li>Declaración de buena fe indicando que el uso del material no está autorizado por el titular de los derechos, su representante o la ley.</li>
+                </ul>
+              
+                <p><strong>El Jardín del Edén FORO</strong> se compromete a responder de manera oportuna a todas las notificaciones legítimas de DMCA. Una vez verificado el reclamo, el contenido será removido con prontitud.</p>
+              
+                <p>📢 <em>Advertencia:</em> De acuerdo con el artículo 512(f) de la Ley de Derechos de Autor, cualquier persona que tergiverse de forma intencionada material o actividad como infractora, puede ser legalmente responsable.</p>
+              
+                <p>Este descargo de responsabilidad está sujeto a modificaciones sin previo aviso.</p>
+
+                <strong>13. ⚖️ ¿Es legal El Jardín del Edén FORO?</strong><br>
+                <p>
+                  Probablemente tengas algo en mente, lo cual seguramente te trajo hasta acá. Tal vez te preguntas si todo esto es legal o si el contenido de este foro está dentro de la ley.
+                </p>
+                <p>
+                  Así que vamos directo al grano y respondamos algunas de las preguntas que podrías estar teniendo:
+                </p>
+              
+                <ul>
+                  <li><strong>¿El foro promueve actividades ilegales?</strong><br>
+                    No. El foro está hecho para la libre expresión, el debate y compartir información, todo dentro de lo permitido por la ley. No se permite contenido ilegal ni actividades que violen normas locales o internacionales.
+                  </li>
+              
+                  <li><strong>¿El contenido es moderado?</strong><br>
+                    Sí. Aunque la moderación puede ser flexible, hay límites. Se eliminan contenidos que infringen derechos de autor, promueven delitos o violan nuestras reglas.
+                  </li>
+              
+                  <li><strong>¿Qué pasa con los derechos de autor?</strong><br>
+                    Todo el contenido publicado debe ser del autor o compartido con permiso. Si algo se infringe, se puede reportar y se actuará conforme a la DMCA (ya detallada más arriba).
+                  </li>
+              
+                  <li><strong>¿Es legal visitar o participar en este foro?</strong><br>
+                    Sí. Mientras sigas las reglas del sitio y la ley de tu país, participar en El Jardín del Edén FORO es completamente legal.
+                  </li>
+                </ul>
+              
+                <p>
+                  En resumen: este sitio se mantiene dentro de lo legal, pero como todo en internet, el uso que le des también es tu responsabilidad. Si ves algo que no debería estar aquí, puedes <strong>reportarlo</strong> usando el boton de reportar en cada publicacion.
+                </p>
+
+                <strong>14. 🧠 ¿Qué es El Jardín del Edén FORO?</strong><br>
+                <p>
+                  El Jardín del Edén FORO es un sitio donde la realidad no se maquilla. Aquí se informa sobre acontecimientos reales, sin efectos especiales, sin filtros ni ediciones que suavicen los hechos. Lo que ves, pasó de verdad. Porque creemos que las personas tienen el derecho a conocer la verdad cruda del mundo en el que viven.
+                </p>
+                <p>
+                  Vivimos en este planeta, compartimos espacio con otros seres humanos, y es nuestra responsabilidad entender lo que realmente ocurre a nuestro alrededor. Muchas personas caminan por la vida en una burbuja de fantasía, creyendo que todo está bien. Pero esa desconexión los vuelve frágiles, vulnerables… y peligrosos.
+                </p>
+                <p>
+                  Este foro existe para despertar conciencias. Para mostrarte que los cuerpos humanos no son invencibles. Que una mala decisión, una conducción irresponsable, el uso de drogas o ignorar normas de seguridad puede cambiar tu vida en un segundo.
+                </p>
+                <p>
+                  Las imágenes y videos sin censura aquí compartidos no son para entretener, sino para generar reflexión. Cuando veas con tus propios ojos las consecuencias reales de ciertos actos, empezarás a pensar dos veces antes de actuar de forma imprudente.
+                </p>
+                <p>
+                  A través de estos informes directos, sin censura ni adornos, buscamos mostrarte la verdad: sobre los peligros que te rodean, sobre los criminales que podrían estar más cerca de lo que imaginas, sobre lo que los seres humanos son capaces de hacerse entre ellos.
+                </p>
+                <p>
+                  La verdad no siempre es agradable. De hecho, casi nunca lo es. Pero aquí no viniste a buscar consuelo. Viniste a abrir los ojos.
+                </p>
+                <p><strong>Prepárate para una experiencia intensa, perturbadora y brutalmente honesta.</strong></p>
+                
+                <p>
+                    <strong>15.⚖️ ¿No es ilegal?</strong><br>
+
+                    <p>
+                        Puede ser moralmente cuestionable, socialmente inapropiado y muchas otras cosas, pero <strong>NO es ilegal</strong>. El Jardín del Edén FORO está alojado en Europa y su contenido fue cuidadosamente revisado por abogados, quienes confirmaron que El Jardín del Edén FORO cumple al 100% con la legalidad vigente. Mostrar videos e imágenes reales y sin censura no está prohibido en ningún país europeo. Sin embargo, aunque el sitio sea legal en Europa, es responsabilidad de cada visitante asegurarse de que el contenido que visualiza en Internet no viole las leyes de su país de residencia.
+                    </p>
+                <p>
+
+                <p>
+                    <strong>16.¿Este es un sitio seguro?</strong><br>
+
+                    <p>
+                        En El Jardín del Edén FORO nos enorgullecemos de ofrecerte un espacio 100% seguro. Solo utilizamos una cantidad mínima de publicidad, sin virus, sin spyware, sin scripts ocultos ni redirecciones inesperadas. Tampoco encontrarás gráficos pesados o música automática, lo que permite que el sitio cargue rápidamente incluso en momentos de alta demanda. Puedes navegar con total tranquilidad: respetamos tu seguridad en línea y tu privacidad en todo momento.
+                    </p>
+                <p>
+                    <strong>17.¿Qué pasa con las fotos de niños? ¿Es pederastia?</strong><br>
+
+                    En El Jardín del Edén FORO, algunas páginas pueden contener imágenes o videos de niños fallecidos, resultado de diversos accidentes o actos de violencia, incluyendo en ocasiones abuso (también de tipo sexual). Estas imágenes fueron originalmente capturadas con fines médicos o como parte de investigaciones criminales, con el objetivo de documentar los casos para la ciencia forense o las autoridades.
+                    A diferencia de la pederastia, los niños retratados no fueron fotografiados para inducir satisfacción sexual ni fueron expuestos de manera intencionada para tales fines. Por lo tanto, este contenido no puede ser clasificado como material pederasta.
+                    Cabe señalar que en libros de texto de medicina y criminología también se incluyen imágenes de niños fallecidos con propósitos educativos y de investigación. ¿Considerarías esos libros como material inapropiado? Evidentemente no, y el mismo principio aplicamos aquí.
+                    Para mayor claridad: aunque existan individuos perturbados que puedan encontrar cualquier tipo de imagen sexualmente estimulante —incluso fotos de catálogos de ropa infantil o de escuelas de ballet—, no podemos controlar esas desviaciones individuales.
+                    En El Jardín del Edén FORO condenamos firmemente la pederastia y la pedofilia, y colaboramos activamente con las autoridades y organizaciones de protección infantil cada vez que se nos solicita.
+                
+                </p>
+
+                <p>
+                    <strong>18.¿Crees que este sitio es desagradable y debería ser eliminado de Internet?</strong><br>
+
+                    Entendemos que la exposición repentina a contenido crudo y sin censura puede ser impactante y abrumadora. Sabemos que tu intención no es causar daño, sino que te sientes genuinamente ofendido y quieres proteger a otros de experimentar lo mismo.
+                    Sin embargo, debes comprender que lo que se publica en El Jardín del Edén FORO es simplemente la realidad sin filtros. Eliminar este sitio no cambiará el hecho de que las tragedias continúan ocurriendo: las personas siguen muriendo, los niños siguen siendo víctimas, las pandillas siguen cometiendo atrocidades, los terroristas siguen actuando y los políticos corruptos siguen tomando medidas extremas. ¿Ves el verdadero problema?
+                    Ignorar lo que sucede en el mundo no hará que desaparezca. Si el contenido de El Jardín del Edén FORO te resulta perturbador, tal vez deberías reflexionar sobre lo necesario que es estar consciente de la realidad para actuar con responsabilidad y protegerte a ti mismo y a quienes te rodean.
+                    Si realmente deseas un cambio, no intentes censurar la realidad: actúa para prevenir que las atrocidades que ves en los videos ocurran en primer lugar.
+                </p>
+
+                <p>
+                    <strong>19.¿Pero qué pasa si los niños acceden a este sitio?</strong><br>
+
+                    El Jardín del Edén FORO muestra la realidad sin censura. En cualquier momento, un niño podría enfrentarse a una escena terrible en el mundo real —un accidente, un acto de violencia, una tragedia— y en esos casos, ¿a quién se le podría culpar? ¿Qué pasa si un niño presencia cómo un conductor imprudente hiere gravemente a un amigo frente a sus ojos? ¿O si sufre una agresión y ve su propio cuerpo herido de forma brutal?
+                    La vida real no se censura, no importa cuánto queramos protegerlos. No existe forma de aislar completamente a los niños de la crudeza del mundo.
+                    En El Jardín del Edén FORO hemos tomado todas las medidas posibles para dificultar que menores accedan al contenido. Sin embargo, la mayor responsabilidad sigue estando en manos de los padres: deben supervisar la actividad de sus hijos en Internet y guiar su acceso a los contenidos adecuados.
+                    No culpes al mensajero por mostrar lo que ya sucede en el mundo real.
+                </p>
+
+                <p>
+                    <h5><strong>20. Por un Internet libre, auténtico y sin censura - El jardin del eden <span style="color:red;">FORO</span></strong><br></h5>
+                </p>
+                
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

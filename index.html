@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./Imagenes/fondo\ jardin\ del\ eden.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: filter 0.3s ease;
+        }
+
+        img {
+            width: 300px;
+            margin: 20px;
+        }
+
+        .btn-custom {
+            margin-left: 10px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-container {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            animation: slideIn 0.4s ease;
+        }
+
+        .btn-close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .seccion-cuadro {
+            margin: 20px;
+        }
+
+        .cuadro {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cuadro-header {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .blur {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container-fluid d-flex align-items-center justify-content-between w-100">
+            <div class="d-flex align-items-center">
+                <!-- Imágenes sin enlace -->
+                <img src="./Imagenes/logo jardin.png" alt="Logo" class="d-inline-block align-text-top me-2">
+                <img src="./Imagenes/logo jardin 2.0.png" alt="Segundo Logo" class="d-inline-block align-text-top me-2" style="width: 100px;">
+                <a class="navbar-brand mb-0" href="https://discord.gg/g8Gmyfqat7">Discord</a>
+                <a class="nav-link text-white" href="./Tienda.html">Tienda</a>
+            </div>
+
+            <!-- Botones de acceso -->
+            <div class="d-flex">
+                <a id="btnLogin" href="#" class="btn btn-outline-light btn-sm btn-custom">Iniciar Sesión</a>
+                <a href="./Registro.html" class="btn btn-light btn-sm btn-custom">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main id="contenidoPrincipal">
+
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <div class="cuadro-content reglas-centradas">
+                    <a href="Reglas.html" style="text-decoration: none; color: white;">
+                        <h1><strong>📜 Importante - Reglas 📜</strong></h1>
+                    </a>
+                </div>
+            </div>
+        </section>        
+        
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <div class="cuadro-header">🔥 Últimas novedades 🔥</div>
+                <div class="cuadro-content">
+                    <p>Ya está disponible nuestra nueva sección de tienda. ¡Échale un vistazo!</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <div class="cuadro-header">🧬 Trending 🧬</div>
+                <div class="cuadro-content">
+                    <p>¡Descubre lo que está marcando tendencia en la comunidad!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <!-- Título principal -->
+                <div class="cuadro-header">💀 Comunidad 💀</div>
+        
+                <!-- Contenido principal -->
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/comunidad.png" alt="Logo Comunidad" class="logo-content">
+                    <h4 class="mb-0">
+                        <a href="./Secciones/Comunidad.html" class="text-decoration-none text-white">
+                            <strong>Jardin del Eden - Randoms - Socializar - COMUNIDAD</strong>
+                        </a>
+                    </h4>
+                </div>
+                
+        
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+        
+                <!-- Nueva subsección -->
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Confesiones.png" alt="Logo confesiones" class="logo-content logo-confesiones">
+                    <h4 class="mb-0">
+                        <a href="./Secciones/Confesiones.html" class="text-decoration-none text-white">
+                        <strong>Confesiones</strong>
+                        </a>
+                    </h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Autolesiones.png" alt="Logo Autolesiones" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Autolesiones</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Desorden mental - Ayuda.png" alt="Logo Desorden ental" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Desorden mental - Psiquiatrico - Ayuda</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Gaming - Comunidad.png" alt="Logo Gaming" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong> Gaming - Comunidad</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Otakus - Comunidad.png" alt="Logo Otaku" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Otakus - Comunidad</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Conspiraciones - Politica.png" alt="Logo Conspiraciones" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Conspiraciones - Politica</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/relogion - paranormal.png" alt="Logo religion - paranormal" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Religion - Paranormal</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Libertad de expresion.png" alt="Logo Libertad de expresion" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Libertad de expresión</strong></h4>
+                </div>
+
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Canceled.png" alt="Logo cancelado" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Funas - Chismes - Cancelados</strong></h4>
+                </div>
+
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Humor negro.png" alt="Logo humor negro" class="logo-content logo-confesiones">
+                    <h4 class="mb-0"><strong>Humor negro</strong></h4>
+                </div>
+
+            </div>
+        </section>
+        
+        
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <!-- Título principal -->
+                <div class="cuadro-header">📚 Comunidad - PDF - Arte 🎨</div>
+        
+                <!-- Contenido principal -->
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Arte.png" alt="Logo Arte" class="logo-content">
+                    <h4 class="mb-0"><strong>Arte - AGHHHTE!!🎨</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Biblioteca.png" alt="Logo Biblioteca" class="logo-content">
+                    <h4 class="mb-0"><strong>Biblioteca - PDF</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Hacking.png" alt="Logo Hacking" class="logo-content">
+                    <h4 class="mb-0"><strong>🧪 Laboratorio 0xINF</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Musica.png" alt="Logo Musica" class="logo-content">
+                    <h4 class="mb-0"><strong>Musica 🎸</strong></h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <!-- Título principal -->
+                <div class="cuadro-header">🩸 Gore 🩸</div>
+        
+                <!-- Contenido principal -->
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Gore nivel I.png" alt="Logo Gore" class="logo-content">
+                    <h4 class="mb-0"><strong>Gore - General</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Gore- Medico.png" alt="Logo Gore - Medico" class="logo-content">
+                    <h4 class="mb-0"><strong>Gore - Medico</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Gore - Guerra.png" alt="Logo WAR" class="logo-content">
+                    <h4 class="mb-0"><strong>Gore - Guerra / Terrorismo</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src=".//Imagenes/Gore - Asesinatos.png" alt="Logo Gore Asesinatos" class="logo-content">
+                    <h4 class="mb-0"><strong>Gore - Asesinatos - Ejecuciones - Carteles</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Gore - Recopilaciones.png" alt="Logo Gore - Recopilaciones" class="logo-content">
+                    <h4 class="mb-0"><strong>Gore - Recopilaciones</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Suicidios.png" alt="Logo Suicidios" class="logo-content">
+                    <h4 class="mb-0"><strong>Suicidios</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Peleas.png" alt="Logo Peleas" class="logo-content">
+                    <h4 class="mb-0"><strong>Peleas - Riñas</strong></h4>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="seccion-cuadro">
+            <div class="cuadro">
+                <!-- Título principal -->
+                <div class="cuadro-header">Comunidad - XXX</div>
+        
+                <!-- Contenido principal -->
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Vota mi cuerpo.png" alt="Logo Vota mi cuerpo" class="logo-content">
+                    <h4 class="mb-0"><strong>Vota mi cuerpo - Sexy o No?</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/Parafilias.png" alt="Logo Biblioteca" class="logo-content">
+                    <h4 class="mb-0"><strong>Parafilias - Turbio</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/XXX.png" alt="Logo XXX" class="logo-content">
+                    <h4 class="mb-0"><strong>XXX - General</strong></h4>
+                </div>
+
+                <!-- Línea divisoria interna -->
+                <hr class="custom-divider">
+
+                <div class="cuadro-content d-flex align-items-center gap-3 mb-3">
+                    <img src="./Imagenes/hentai.png" alt="Logo hentai" class="logo-content">
+                    <h4 class="mb-0"><strong>Hentai - Animaciones</strong></h4>
+                </div>
+            </div>
+        </section>
+
+    <!-- MODAL DE INICIO DE SESIÓN -->
+    <div id="modalLogin" class="modal-overlay">
+        <div class="modal-container">
+            <button class="btn-close-modal" onclick="cerrarModal()">×</button>
+            <h2 class="text-white mb-4">Iniciar Sesión</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="usuario" class="form-label text-white">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-white">Contraseña</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            </form>
+        </div>
+    </div>
+<script src="login.js"></script>
+</body>
+</html>
