@@ -1,0 +1,105 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/Imagenes/fondo jardin del eden.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 20px;
+}
+
+/* Estilos para los temas en la página principal */
+.cuadro {
+    border: 2px solid #ff0000;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cuadro:hover {
+    transform: translateX(10px);
+}
+
+/* Estilos para la página del tema */
+.contenido-tema {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.perfil-usuario {
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-right: 2px solid #ff0000;
+}
+
+.contenido-principal {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header-tema {
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.volver-btn {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 2px solid #ff0000;
+}
+
+.volver-btn:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+/* Estilos para la información del usuario */
+.stats-usuario {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.stats-item {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333;
+}
+
+.etiqueta {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin: 2px;
+}
+
+.rango {
+    color: #ff0000;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .contenido-tema {
+        flex-direction: column;
+    }
+    
+    .perfil-usuario {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #ff0000;
+    }
+} 

@@ -106,6 +106,7 @@ hr.custom-divider {
 /* Botones personalizados */
 .btn-custom {
     margin-left: 10px;
+    position: relative;
 }
 
 .modal-overlay {
@@ -196,6 +197,136 @@ hr.custom-divider {
 
 .blur {
     filter: blur(5px);
+}
+
+/* Estilos para el menú desplegable del perfil */
+.profile-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-container img.rounded-circle {
+    width: 65px !important;
+    height: 65px !important;
+    border: 2px solid #3c3c3c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.profile-container span {
+    color: #ffffff;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Estilos para los EdeCoins en el navbar */
+.edecoins-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+}
+
+.edecoin-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.edecoins-amount {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Estilo para la imagen de perfil en el botón */
+.btn-custom img {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.btn-custom:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos para el botón de cerrar sesión */
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logout-button i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.logout-button:hover i {
+    transform: translateX(3px);
+}
+
+.profile-container:hover .profile-dropdown {
+    display: block;
+}
+
+/* Estilos para el menú desplegable del perfil */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: transparent;
+    padding: 8px 0;
+    min-width: 150px;
+    z-index: 1000;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-dropdown .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.profile-dropdown .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 
