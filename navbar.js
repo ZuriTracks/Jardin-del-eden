@@ -1,3 +1,5 @@
+const API_URL = window.location.protocol + '//' + window.location.hostname + ':5000';
+
 // Función para verificar la sesión
 async function checkSession() {
     try {
@@ -16,6 +18,7 @@ async function checkSession() {
             const data = await response.json();
             console.log('navbar.js - Datos de sesión:', data);
             if (data.authenticated && data.user) {
+                console.log('navbar.js - Usuario autenticado detectado.');
                 // Obtener los EdeCoins actualizados del usuario
                 const userDataResponse = await fetch(`${API_URL}/api/user/${data.user.id}`, {
                     credentials: 'include'
@@ -23,15 +26,16 @@ async function checkSession() {
                 if (userDataResponse.ok) {
                     const userData = await userDataResponse.json();
                     data.user.edecoins = userData.edecoins;
-                    console.log('navbar.js - EdeCoins actualizados:', userData.edecoins);
+                    console.log('navbar.js - EdeCoins obtenidos para el usuario:', userData.edecoins);
                 }
                 
-                console.log('navbar.js - Usuario autenticado:', data.user);
+                console.log('navbar.js - Llamando a updateUIForLoggedInUser...');
                 updateUIForLoggedInUser(data.user);
+                console.log('navbar.js - updateUIForLoggedInUser llamada.');
                 return data.user;
             }
         } else {
-            console.log('navbar.js - No hay sesión activa');
+            console.log('navbar.js - No hay sesión activa o respuesta no OK.');
         }
         return null;
     } catch (error) {
@@ -42,9 +46,11 @@ async function checkSession() {
 
 // Función para actualizar la UI cuando el usuario está logueado
 function updateUIForLoggedInUser(user) {
+    console.log('navbar.js - Dentro de updateUIForLoggedInUser.');
     const btnLogin = document.getElementById('btnLogin');
+    console.log('navbar.js - btnLogin element:', btnLogin);
     if (btnLogin) {
-        console.log('navbar.js - Actualizando UI para usuario:', user);
+        console.log('navbar.js - btnLogin encontrado. Procediendo a actualizar UI.');
         
         // Asegurarnos de que la URL de la imagen sea absoluta y correcta
         let avatarUrl;
@@ -63,6 +69,10 @@ function updateUIForLoggedInUser(user) {
         console.log('navbar.js - URL del avatar construida:', avatarUrl);
         console.log('navbar.js - EdeCoins del usuario:', user.edecoins);
 
+        // Detectar si estamos en una subcarpeta (como Secciones)
+        const isInSubfolder = window.location.pathname.includes('/Secciones/');
+        const edecoinImgPath = isInSubfolder ? '../Imagenes/EdeCoin.png' : './Imagenes/EdeCoin.png';
+
         // Limpiar y actualizar el botón de login
         btnLogin.className = '';
         btnLogin.style.textDecoration = 'none';
@@ -78,7 +88,7 @@ function updateUIForLoggedInUser(user) {
         const profileContent = `
             <div class="d-flex align-items-center">
                 <div class="edecoins-container me-3">
-                    <img src="./Imagenes/EdeCoin.png" alt="EdeCoins" class="edecoin-icon" style="image-rendering: -webkit-optimize-contrast;">
+                    <img src="${edecoinImgPath}" alt="EdeCoins" class="edecoin-icon" style="image-rendering: -webkit-optimize-contrast;">
                     <span class="edecoins-amount">${user.edecoins !== undefined ? user.edecoins.toLocaleString() : '0'}</span>
                 </div>
                 <a href="/perfil.html?id=${user.id}" style="text-decoration: none;">
@@ -107,14 +117,25 @@ function updateUIForLoggedInUser(user) {
         profileContainer.appendChild(dropdownMenu);
 
         // Reemplazar el contenido del botón con el contenedor del perfil
+        console.log('navbar.js - Reemplazando contenido de btnLogin con perfil.');
         btnLogin.innerHTML = '';
         btnLogin.appendChild(profileContainer);
+        console.log('navbar.js - Contenido de btnLogin reemplazado.');
 
         // Ocultar botón de registro si existe
-        const btnRegistro = document.querySelector('a[href="/Registro.html"]');
+        // Modificado para soportar rutas relativas (./Registro.html) y absolutas (/Registro.html)
+        console.log('navbar.js - Buscando botón de registro...');
+        const btnRegistro = document.querySelector('a[href="/Registro.html"], a[href="../Registro.html"]');
+        console.log('navbar.js - btnRegistro element:', btnRegistro);
         if (btnRegistro) {
+            console.log('navbar.js - btnRegistro encontrado. Ocultando...');
             btnRegistro.style.display = 'none';
+            console.log('navbar.js - btnRegistro oculto.');
+        } else {
+             console.log('navbar.js - btnRegistro no encontrado.');
         }
+    } else {
+         console.log('navbar.js - btnLogin no encontrado. No se puede actualizar la UI.');
     }
 }
 
@@ -141,6 +162,8 @@ async function logout() {
 // Verificar sesión cuando se carga la página
 console.log('navbar.js - Script cargado');
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('navbar.js - DOM Content Loaded - Inicializando navbar...');
+    console.log('navbar.js - DOMContentLoaded activado.');
+    console.log('navbar.js - Inicializando navbar y verificando sesión...');
     checkSession();
+    console.log('navbar.js - checkSession llamada.');
 }); 

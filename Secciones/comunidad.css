@@ -102,4 +102,22 @@ body {
         border-right: none;
         border-bottom: 2px solid #ff0000;
     }
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: #ff0000 !important;
+    transition: color 0.2s;
+}
+
+.edecoin-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transition: transform 0.3s ease;
+}
+
+.edecoin-icon:hover {
+    transform: scale(1.12);
 } 

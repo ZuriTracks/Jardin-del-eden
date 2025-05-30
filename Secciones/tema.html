@@ -5,25 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema - Jardín del Eden</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="comunidad.css">
+    <style>
+        /* Asegurar que el navbar se pegue arriba */
+        html, body {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        .navbar {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        /* Ajustar tamaño de los logos en el navbar para que coincidan con index.html */
+        /* Primer logo (Jardín del Eden) */
+        .navbar img[alt="Logo"] {
+            /* Ajusta la altura para que se vea bien en el navbar, similar al index */
+            height: 40px !important; 
+            width: auto !important; /* No forzar ancho, mantener proporción */
+        }
+
+        /* Segundo logo (logo jardin 2.0) - ya tiene width: 100px en HTML, pero aseguramos con important */
+        .navbar img[alt="Segundo Logo"] {
+             width: 100px !important;
+             height: auto !important; /* Mantener proporción */
+        }
+
+         /* Asegurar que otras imágenes dentro del navbar no se vean afectadas por estilos generales */
+        .navbar img:not([alt="Logo"]):not([alt="Segundo Logo"]) {
+             /* Puedes añadir estilos aquí si otras imágenes se ven mal, pero los logos son la prioridad */
+             /* Por ahora, aseguramos que no se vean afectadas por el estilo del segundo logo */
+             /* Si hay otras imágenes pequeñas en el navbar, podrías necesitar un selector más específico */
+        }
+
+
+    </style>
 </head>
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container-fluid d-flex align-items-center justify-content-between w-100">
             <div class="d-flex align-items-center">
-                <a href="/index.html">
-                    <img src="/Imagenes/logo jardin.png" alt="Logo" class="d-inline-block align-text-top me-2">
+                <a href="../index.html">
+                    <img src="../Imagenes/logo jardin.png" alt="Logo" class="d-inline-block align-text-top me-2">
                 </a>
-                <img src="/Imagenes/logo jardin 2.0.png" alt="Segundo Logo" class="d-inline-block align-text-top me-2" style="width: 100px;">
+                <img src="../Imagenes/logo jardin 2.0.png" alt="Segundo Logo" class="d-inline-block align-text-top me-2" style="width: 100px;">
                 <a class="navbar-brand mb-0" href="https://discord.gg/g8Gmyfqat7">Discord</a>
-                <a class="nav-link text-white" href="/Tienda.html">Tienda</a>
+                <a class="nav-link text-white" href="../Tienda.html">Tienda</a>
             </div>
             <div class="d-flex">
                 <a id="btnLogin" href="#" class="btn btn-outline-light btn-sm btn-custom">Iniciar Sesión</a>
-                <a href="/Registro.html" class="btn btn-light btn-sm btn-custom">Registrarse</a>
+                <a href="../Registro.html" class="btn btn-light btn-sm btn-custom">Registrarse</a>
             </div>
         </div>
     </nav>
@@ -66,8 +100,8 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/navbar.js"></script>
-    <script src="/login.js"></script>
+    <script src="../navbar.js"></script>
+    <script src="../login.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const API_URL = window.location.protocol + '//' + window.location.hostname + ':5000';
@@ -82,31 +116,38 @@
                 try {
                     const response = await fetch(`${API_URL}/api/publicaciones/${temaId}`);
                     if (!response.ok) {
-                        document.getElementById('username').textContent = '';
+                        console.error('Error al cargar datos del tema:', response.status);
                         return;
                     }
                     const data = await response.json();
-                    // Actualizar la imagen de perfil
                     const avatarUrl = data.avatar_url ?
                         (data.avatar_url.startsWith('http') ? data.avatar_url : `${API_URL}${data.avatar_url}`) :
-                        '/Imagenes/perfil.jpg';
+                        '../Imagenes/perfil.jpg';
                     document.getElementById('userAvatar').src = avatarUrl;
-                    // Solo mostrar datos reales, sin valores predeterminados
                     document.getElementById('username').textContent = data.username || '';
                     document.getElementById('registrationDate').textContent = data.fecha_registro ? new Date(data.fecha_registro).toLocaleDateString() : '';
                     document.getElementById('edecoins').textContent = (data.edecoins !== undefined && data.edecoins !== null) ? `💰 ${data.edecoins}` : '';
-                    // Limpia los campos de rango, tags, mensajes y reputación
-                    document.getElementById('userRank').textContent = '';
-                    document.getElementById('userTags').innerHTML = '';
-                    document.getElementById('messageCount').textContent = '';
-                    document.getElementById('reputation').textContent = '';
-                    // Actualizar datos del tema
+                    document.getElementById('userRank').textContent = data.rango || '';
+                    document.getElementById('userTags').innerHTML = Array.isArray(data.tags) ? data.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('') : data.tags || '';
+                    document.getElementById('messageCount').textContent = data.message_count || '';
                     document.getElementById('titulo').textContent = data.titulo || '';
                     document.getElementById('fecha').textContent = data.fecha_publicacion ? new Date(data.fecha_publicacion).toLocaleString() : '';
                     document.getElementById('contenido').innerHTML = data.contenido || '';
                 } catch (error) {
                     console.error('Error loading tema data:', error);
                 }
+            }
+        });
+    </script>
+
+    <!-- Script para asegurar la actualización del navbar al cargar la página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si la función checkSession de navbar.js existe y ejecutarla
+            if (typeof checkSession === 'function') {
+                checkSession();
+            } else {
+                console.error('La función checkSession de navbar.js no está disponible.');
             }
         });
     </script>

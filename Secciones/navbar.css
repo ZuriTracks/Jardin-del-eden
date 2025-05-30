@@ -77,4 +77,37 @@
 
 .btn-custom:hover:before {
     left: 100%;
+}
+
+/* Estilos para el menú desplegable del perfil */
+.profile-dropdown {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    /* Ajustar top para que quede justo debajo del navbar o del contenedor del perfil */
+    /* Puedes necesitar ajustar este valor dependiendo de la altura exacta de tu navbar */
+    top: 100%; /* Posicionarlo justo debajo del borde inferior del elemento padre posicionado (profile-container) */
+    right: 0; /* Alinear a la derecha del contenedor */
+    background-color: #222; /* Fondo oscuro */
+    border: 1px solid #444; /* Borde */
+    border-radius: 5px;
+    min-width: 150px; /* Ancho mínimo del menú */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    padding: 10px 0; /* Padding interno para el contenido del menú */
+    margin-top: 0px; /* Asegurar que no haya margen superior que cause un hueco */
+    /* Añadir una pequeña área extra en la parte superior para facilitar la transición del cursor */
+    padding-top: 15px; /* Aumentar el padding superior para un área de hover más indulgente */
+    margin-top: -15px; /* Compensar el padding superior para que el contenido no se desplace */
+
+    /* Animación (opcional) */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+/* Mostrar el menú cuando se pasa el cursor sobre el contenedor del perfil */
+.profile-container:hover .profile-dropdown {
+    display: block; /* O flex, si el contenido lo requiere */
+    opacity: 1;
+    transform: translateY(0);
 } 
